@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>jquery accordion</title>
+	<style type="text/css">
+		body {
+			font-family:courier;
+		    
+			
+		    margin: auto;
+		    text-align: center;
+		}
+		h1 {
+			background-color:#E8CFD9;
+			font-weight:light;
+		}
+
+		dl {
+			
+		}
+
+		dd {
+		    margin: 0;
+			
+		    padding: 1em 0;
+		}
+
+		dt {
+		    cursor: pointer;
+		    
+			
+		    font-weight: bold;
+		    font-size : 1.5em;
+		    line-height: 2em;
+		    background: #e3e3e3;
+		    border-bottom: 1px solid #c5c5c5;
+		    border-top: 1px solid white;
+		}
+
+		dt:first-child { border-top: none; }
+		dt:nth-last-child(2) { border-bottom: none; }
+
+		.hide { display: none;}
+	</style>
+</head>
+<body>
+	<h1>Paul Stuart Gladstone</h1>
+<dl>
+	<dt>Who Am I?</dt>
+	<dd>I'm a web developer living and working in New York City (Manhattan). I forsee new york as the next technological hotspot and doing everything in my power to make it so.</dd>
+	<dt>What do I do?</dt>
+	<dd>HTML5, CSS3 & Javascript</dd>
+	<dt>Harris Publications</dt>
+	<dd>I was a web developer at Harris Publictions, There I helped to build the following sites: xxlmag.com slamonline.com rides-mag.com, 0-60mag.com </dd>
+	<dt>Brands</dt>
+	<dd>Kia, Hyundai, Nissan, Harley Davidson</dd>
+	<dt>What are your hours?</dt>
+	<dd>We are open 24/7.</dd>
+</dl>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+(function(){
+	$('dd').filter(':nth-child(n+4)').addClass('hide');	
+
+	$('dl').on('click', 'dt', function(){
+		$(this)
+			.next()
+
+			.slideDown('fast')
+			
+			.siblings('dd')
+					.slideUp('fast')
+			;
+
+	});
+	
+})();
+</script>
+</body>
+</html>
