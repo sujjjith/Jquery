@@ -52,23 +52,23 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-(function(){
-	var co = $('article').find('span.co').each(function() {
-		var $this = $(this);
-		$('<blockquote>', { 
-			class : "co",
-			text : $this.text() 
-		}).prependTo( $this.closest('p') );
-	})
 
-})();
-
+$('span.co').each(function(){
+	$this = $(this);
+	$('<blockquote>', {
+		text : $this.text(),
+		class: 'co'
+	}).appendTo($this.closest('p'));
+});
 //Scenerio: want to grab elements within a paragraph and create a block quote out of them
 //get elements
 // iterate through them
 //create a new element
 // add some attributes to it
 // attach it to the nearest paragraph element. 
+
+
+
 </script>
 
 </body>

@@ -1,0 +1,10 @@
+Notes
+
+using .is(':hidden') with toggles, they go together well
+
+when thinking of object functions (what is this called) don't think of each
+
+instead of creating a function for the second para of on, you can pass a method
+
+
+tryed to use close when it didn't exists, mistakenly though it was an issue with call

@@ -12,17 +12,21 @@
 <button data-state=night>Night</button>
 </body>
 <script type="text/javascript">
-$('button').on('click',function(){
-	var $this  = $(this),
-	    $state = $(this).data('state');
-	$('body')
-		.removeClass()
-		.addClass($state)
-	;
-	$this
-		.attr('disabled', 'disabled')
-		.siblings().removeAttr('disabled')
-	;			
-});
+	
+	$('button').on('click', function(){
+		var $this  = $(this);
+			$state = $this.data('state');
+
+		$('body')
+			.removeClass()
+			.addClass($state)
+		;
+
+		$this
+			.attr('disabled','disabled')
+		.siblings()
+			.removeAttr('disabled')
+		;
+	});
 </script>
 </html>

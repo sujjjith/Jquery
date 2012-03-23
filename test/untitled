@@ -1,0 +1,78 @@
+// Create a contact form that will slide down from top of the page when button is clicked
+
+// if javascript exists add js class to html
+$('html').addClass('js');
+
+// self-envoking ananymous function
+(function(){
+//create contactForm object to house
+var contactForm = {
+
+	//a few set ups: grab the container
+	container : $('#contact'),
+	//create a config obj that set the effects and speed
+	config : {
+		effect : 'slideToggle',
+		speed  : 300
+	}, 
+	//create an init that passes the config as a param
+	init : function(config){
+
+	//extend the config object to the init function
+	$.extend(this.config, config);
+	//create our button append it to artice element
+	$('<button>', { text : 'contact'})
+		.appendTo('article')
+			//on click fire off a show: the show is this.show?
+		.on('click', this.show);
+	},
+
+	//create a show function
+	show : function(){
+		//cache whole obj
+		var cf 		  = contactForm,
+		//get container, get config
+			container = cf.container,
+			config    = cf.config;
+		//if the container is hidden
+		if (container.is(':hidden')) {
+			//first, use call to close method and add X close button
+			contactForm.close.call(container);
+			//then, do configed effect with configed speed
+			container[config.effect](config.speed);	
+		}
+	},
+	close : function(){
+		var $this = $(this),
+			config = contactForm.config;
+
+			if($this.find('span.close').length ) return;
+
+			$('<span class=close>X</span>')
+				.prependTo(this)
+				.on('click', function(){
+					$this[config.effect](config.speed);
+				})
+	}
+
+
+
+
+	
+
+	//now set up the close
+	//	get this 
+	//	get config
+	// find span.close within $ths
+	//	if span.close exists then stop
+	//	otherwise 
+	//	create the close element and prepend it to this
+	//	and add the toggle method to the onclick event
+
+	// fire the init -can set some defaults in here as well 
+	}
+	contactForm.init({
+		speed : 300
+	});
+
+})();
