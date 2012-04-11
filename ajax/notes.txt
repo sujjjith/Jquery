@@ -1,0 +1,6 @@
+notes.txt
+
+~~true = 1
+~~false = 0
+
+turning a booleen to a number 

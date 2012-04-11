@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<a href="about.html">Learn More</a>
+<a href="contact.html">Contact</a>
+<div id="wrap"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+// load, getJSON, get, post, getScript  all used $.ajax
+(function(){
+var $wrapper = $('#wrap');
+$('a').on('click', function(e) {
+	var href = $(this).attr('href');
+
+	$wrapper.load(href + '#container');
+
+	e.preventDefault(); 
+})
+	
+})();
+</script>
+</body>
+</html>
